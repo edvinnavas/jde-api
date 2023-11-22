@@ -192,7 +192,7 @@ public class Ctrl_JDE implements Serializable {
                             + CXUPMJ + ","
                             + CXUPMT + ")";
                     Statement stmt = conn.createStatement();
-                    System.out.println("CADENASQL: " + cadenasql);
+                    // System.out.println("CADENASQL: " + cadenasql);
                     stmt.executeUpdate(cadenasql);
                     stmt.close();
 
@@ -230,11 +230,11 @@ public class Ctrl_JDE implements Serializable {
                             + CXUPMJ + ","
                             + CXUPMT + ")";
                     stmt = conn.createStatement();
-                    System.out.println("CADENASQL: " + cadenasql);
+                    // System.out.println("CADENASQL: " + cadenasql);
                     stmt.executeUpdate(cadenasql);
                     stmt.close();
                 } else {
-                    System.out.println("ACTUALIZAR TASA DE CAMBIO.");
+                    // System.out.println("ACTUALIZAR TASA DE CAMBIO.");
                 }
             }
 

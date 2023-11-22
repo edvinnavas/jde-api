@@ -108,7 +108,7 @@ public class Ctrl_Base_Datos implements Serializable {
 
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             resultado = DriverManager.getConnection("jdbc:oracle:thin:@//" + host + ":1521/" + sid, user, pass);
-            System.out.println("Conexión Satisfactoria: DIVISION: " + division + " AMBIENTE: " + ambiente);
+            // System.out.println("Conexión Satisfactoria: DIVISION: " + division + " AMBIENTE: " + ambiente);
         } catch (Exception ex) {
             resultado = null;
             System.out.println("PROYECTO:api-sfc-jde|CLASE:" + this.getClass().getName() + "|METODO:obtener_conexion()|ERROR:" + ex.toString());
