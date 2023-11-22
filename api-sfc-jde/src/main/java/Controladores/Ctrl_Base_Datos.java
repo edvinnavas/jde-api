@@ -26,18 +26,37 @@ public class Ctrl_Base_Datos implements Serializable {
 
             switch (division) {
                 case "PET": {
-                    if (ambiente.equals("PY")) {
-                        host = "10.252.7.207";
-                        sid = "jdepy";
-                        user = "CRPDTA";
-                        pass = "CRPDTA";
-                    } else {
-                        host = "10.252.7.201";
-                        sid = "jdepd";
-                        user = "PRODDTA";
-                        pass = "PRODDTA";
+                    switch (ambiente) {
+                        case "PY": {
+                            host = "10.252.7.207";
+                            sid = "jdepy";
+                            user = "CRPDTA";
+                            pass = "CRPDTA";
+                            break;
+                        }
+                        case "PYB": {
+                            host = "10.252.7.207";
+                            sid = "jdepy";
+                            user = "CRPDTAB";
+                            pass = "CRPDTAB";
+                            break;
+                        }
+                        case "PYC": {
+                            host = "10.252.7.207";
+                            sid = "jdepy";
+                            user = "CRPDTAC";
+                            pass = "CRPDTAC";
+                            break;
+                        }
+                        default: {
+                            host = "10.252.7.201";
+                            sid = "jdepd";
+                            user = "PRODDTA";
+                            pass = "PRODDTA";
+                            break;
+                        }
                     }
-
+                    
                     break;
                 }
                 case "PAC": {
@@ -92,7 +111,7 @@ public class Ctrl_Base_Datos implements Serializable {
             System.out.println("Conexión Satisfactoria: DIVISION: " + division + " AMBIENTE: " + ambiente);
         } catch (Exception ex) {
             resultado = null;
-            System.out.println("PROYECTO:api-grupoterra-svfel-v3|CLASE:" + this.getClass().getName() + "|METODO:obtener_conexion()|ERROR:" + ex.toString());
+            System.out.println("PROYECTO:api-sfc-jde|CLASE:" + this.getClass().getName() + "|METODO:obtener_conexion()|ERROR:" + ex.toString());
         }
 
         return resultado;
@@ -111,7 +130,7 @@ public class Ctrl_Base_Datos implements Serializable {
             stmt.close();
         } catch (Exception ex) {
             resultado = "PROYECTO:api-grupoterra-svfel-v3|CLASE:" + this.getClass().getName() + "|METODO:ObtenerString()|ERROR:" + ex.toString();
-            System.out.println("PROYECTO:api-grupoterra-svfel-v3|CLASE:" + this.getClass().getName() + "|METODO:ObtenerString()|ERROR:" + ex.toString());
+            System.out.println("PROYECTO:api-sfc-jde|CLASE:" + this.getClass().getName() + "|METODO:ObtenerString()|ERROR:" + ex.toString());
         }
 
         return resultado;
@@ -130,7 +149,7 @@ public class Ctrl_Base_Datos implements Serializable {
             stmt.close();
         } catch (Exception ex) {
             resultado = -1;
-            System.out.println("PROYECTO:api-grupoterra-svfel-v3|CLASE:" + this.getClass().getName() + "|METODO:ObtenerEntero()|ERROR:" + ex.toString());
+            System.out.println("PROYECTO:api-sfc-jde|CLASE:" + this.getClass().getName() + "|METODO:ObtenerEntero()|ERROR:" + ex.toString());
         }
 
         return resultado;
@@ -149,7 +168,7 @@ public class Ctrl_Base_Datos implements Serializable {
             stmt.close();
         } catch (Exception ex) {
             resultado = Long.valueOf(-1);
-            System.out.println("PROYECTO:api-grupoterra-svfel-v3|CLASE:" + this.getClass().getName() + "|METODO:ObtenerLong()|ERROR:" + ex.toString());
+            System.out.println("PROYECTO:api-sfc-jde|CLASE:" + this.getClass().getName() + "|METODO:ObtenerLong()|ERROR:" + ex.toString());
         }
 
         return resultado;
@@ -168,7 +187,7 @@ public class Ctrl_Base_Datos implements Serializable {
             stmt.close();
         } catch (Exception ex) {
             resultado = -1.00;
-            System.out.println("PROYECTO:api-grupoterra-svfel-v3|CLASE:" + this.getClass().getName() + "|METODO:ObtenerDouble()|ERROR:" + ex.toString());
+            System.out.println("PROYECTO:api-sfc-jde|CLASE:" + this.getClass().getName() + "|METODO:ObtenerDouble()|ERROR:" + ex.toString());
         }
 
         return resultado;
@@ -188,7 +207,7 @@ public class Ctrl_Base_Datos implements Serializable {
         } catch (Exception ex) {
             resultado = new ArrayList<>();
             resultado.add(ex.toString());
-            System.out.println("PROYECTO:api-grupoterra-svfel-v3|CLASE:" + this.getClass().getName() + "|METODO:ObtenerVectorString()|ERROR:" + ex.toString());
+            System.out.println("PROYECTO:api-sfc-jde|CLASE:" + this.getClass().getName() + "|METODO:ObtenerVectorString()|ERROR:" + ex.toString());
         }
 
         return resultado;
@@ -208,7 +227,7 @@ public class Ctrl_Base_Datos implements Serializable {
         } catch (Exception ex) {
             resultado = new ArrayList<>();
             resultado = null;
-            System.out.println("PROYECTO:api-grupoterra-svfel-v3|CLASE:" + this.getClass().getName() + "|METODO:ObtenerVectorEntero()|ERROR:" + ex.toString());
+            System.out.println("PROYECTO:api-sfc-jde|CLASE:" + this.getClass().getName() + "|METODO:ObtenerVectorEntero()|ERROR:" + ex.toString());
         }
 
         return resultado;
